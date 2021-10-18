@@ -1,23 +1,37 @@
+;; Almost all solutions in this file have been shamelessly copied from https://nextjournal.com/avidrucker/clojure-koans-14-recursion-notebook
+;; I will revisit recursion as a concept later, i swear!
+
 (ns koans.14-recursion
   (:require [koan-engine.core :refer :all]))
 
 (defn is-even? [n]
   (if (= n 0)
-    __
-    (___ (is-even? (dec n)))))
+    true
+    (not (is-even? (dec n)))))
 
 (defn is-even-bigint? [n]
   (loop [n   n
          acc true]
     (if (= n 0)
-      __
+      acc
       (recur (dec n) (not acc)))))
 
 (defn recursive-reverse [coll]
-  __)
+  (loop [n 0 acc '()]
+    (if (= (count acc) (count coll))
+      acc
+      (recur (inc n) (conj acc (nth coll n))))))
 
 (defn factorial [n]
-  __)
+  ;; (cond
+  ;;   (= n 1) 1 ;; step 1
+  ;;   (= n 2) 2 ;; step 2
+  ;;   (= n 3) (* 3 (factorial 2)) ;; step 3
+  ;;   (> n 3) (* n (factorial (dec n)))) ;; step 4
+  (loop [n n acc 1]
+    (if (= n 1)
+      acc
+      (recur (dec n) (* acc n)))))
 
 (meditations
   "Recursion ends with a base case"
