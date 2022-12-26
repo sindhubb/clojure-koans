@@ -15,14 +15,14 @@
   (= (str "An Oxford comma list of apples, "
           "oranges, "
           "and pears.")
-     ((fn [[a b c]] __)
+     ((fn [[a b c]] (str "An Oxford comma list of " a ", " b ", and " c "."))
       ["apples" "oranges" "pears"]))
 
   "Or in let expressions"
   (= "Rich Hickey aka The Clojurer aka Go Time aka Lambda Guru"
      (let [[first-name last-name & aliases]
-           (list "Rich" "Hickey" "The Clojurer" "Go Time" "Lambda Guru")]
-       __))
+           (list "Rich" "Hickey" "The Clojurer" "Go Time" "Lambda Guru")] 
+             (str first-name " " last-name " aka " (clojure.string/join " aka " aliases))))
 
   "You can regain the full argument if you like arguing"
   (= {:original-parts ["Stephen" "Hawking"] :named-parts {:first "Stephen" :last "Hawking"}}

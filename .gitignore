@@ -207,3 +207,6 @@ ubuntu-xenial-16.04-cloudimg-console.log
 
 # Jupyterlab
 .ipynb_checkpoints/
+
+.lsp/
+.clj-kondo/
