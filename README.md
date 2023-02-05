@@ -1,3 +1,10 @@
+# What is this?
+
+This is my fork of Clojure Koans repo. 
+Contains Clerk to add explanations to koans. 
+See: https://sindhubb.github.io/clojure-koans
+
+----
 # Clojure Koans
 
 The Clojure Koans are a fun way to get started with Clojure - no experience
